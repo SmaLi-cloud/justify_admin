@@ -1,0 +1,6 @@
+ VUE_APP_API_BASE_URL=http://zxzsc.pc-api.jiepei.top
+ VUE_APP_API_BASE_URL=http://xjx-pc-warehouse.pc-api.jiepei.top 
+ VUE_APP_API_BASE_URL=http://warehouse.testing.jiepei.top
+ VUE_APP_API_BASE_URL=http://zxz-sc.testing.jiepei.top
+ VUE_APP_API_BASE_URL=http://zb.pc-api.jiepei.top
+ VUE_APP_API_BASE_URL=http://127.0.0.1:8000

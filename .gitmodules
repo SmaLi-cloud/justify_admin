@@ -1,0 +1,3 @@
+[submodule "psync"]
+	path = psync
+	url = git@47.92.173.114:tools/psync.git

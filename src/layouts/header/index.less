@@ -1,0 +1,151 @@
+.admin-header{
+  padding: 0;
+  z-index: 10;
+  // box-shadow: @shadow-down;
+  position: relative;
+  background: #0B2540;
+  .head-menu{
+    height: 64px;
+    line-height: 64px;
+    vertical-align: middle;
+    box-shadow: none;
+  }
+  &.dark{
+    background: @header-bg-color-dark;
+    color: white;
+  }
+  &.night{
+    .head-menu{
+      background: @base-bg-color;
+    }
+  }
+  /deep/ .ant-badge-count {
+    background-color: #FB6522;
+    font-size: 14px;
+    box-shadow: none;
+  }
+  .admin-header-wide{
+    padding-left: 10px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    .admin-header-wide-item {
+      display: flex;
+      align-items: center;
+    }
+    .module-wrap {
+      display: flex;
+      align-items: center;
+    }
+    .module-item {
+      display: flex;
+      align-items: center;
+      margin-right: 60px;
+      cursor: pointer;
+    }
+    .module-text {
+      margin-left: 14px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .user-search {
+      width: 160px;
+      margin-left: 29px;
+      /deep/ .ant-input {
+        padding: 6px 11px 6px 30px;
+        border-radius: 18px;
+        &:focus {
+          border-color: transparent;
+          box-shadow: none;
+        }
+        &:hover {
+          border-color: transparent;
+        }
+      }
+    }
+    .weather-wrap {
+      font-size: 14px;
+      line-height: 19px;
+      color: #fff;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 9999;
+      img {
+        margin-left: 19px;
+      }
+    }
+    .wather-info {
+      margin-bottom: 4px;
+    }
+    &.head.fixed{
+      max-width: 1400px;
+      margin: auto;
+      padding-left: 0;
+    }
+    &.side{
+      padding-right: 25px;
+    }
+    .logo {
+      height: 64px;
+      line-height: 58px;
+      vertical-align: top;
+      display: inline-block;
+      padding: 0 12px 0 24px;
+      cursor: pointer;
+      font-size: 20px;
+      color: inherit;
+      &.pc{
+        padding: 0 12px 0 0;
+      }
+      img {
+        vertical-align: middle;
+      }
+      h1{
+        color: inherit;
+        display: inline-block;
+        font-size: 16px;
+      }
+    }
+    .trigger {
+      font-size: 20px;
+      line-height: 64px;
+      padding: 0 24px;
+      cursor: pointer;
+      transition: color .3s;
+      &:hover{
+        color: @primary-color;
+      }
+    }
+    .admin-header-menu{
+      display: inline-block;
+    }
+    .admin-header-right{
+      float: right;
+      display: flex;
+      color: inherit;
+      height: 64px;
+      .header-item{
+        color: inherit;
+        padding: 0 12px;
+        cursor: pointer;
+        align-self: center;
+        a{
+          color: inherit;
+          i{
+            font-size: 16px;
+          }
+        }
+      }
+      each(@theme-list, {
+        &.@{value} .header-item{
+          &:hover{
+            @class: ~'hover-bg-color-@{value}';
+            background-color: @@class;
+          }
+        }
+      })
+    }
+  }
+}

@@ -1,0 +1,23 @@
+[
+    {
+        "app_name": "justfit_admin",
+        "exclude": [
+            ".git",
+            "psync",
+            "psync.json",
+            ".gitmodules"
+        ],
+        "source": [
+            "dist/"
+        ],
+        "prod": [
+            {
+                "name": "prod-ali",
+                "host": "118.31.18.106",
+                "user": "jiepei",
+                "branch": false,
+                "delete": true
+            }
+        ]
+    }
+]

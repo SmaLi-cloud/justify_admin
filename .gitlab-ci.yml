@@ -1,0 +1,34 @@
+cache:
+    untracked: true
+    paths:
+      - node_modules/
+
+before_script:
+  - export RSYNC_PASSWORD=toloyou123
+  
+# 执行步骤，依次执行
+stages:
+  - testing
+  - deploy
+
+testing-job:
+  stage: testing
+  tags:
+    - justfit-admin
+  only: # 限定执行脚本的条件，only 支持 branch、tag、change、正则
+    - testing
+  script: # 此 stage 要执行的脚本
+    - yarn
+    - yarn build
+    - rsync -avz --delete dist/ jiepei@42.192.80.162::justfit_admin/lml
+
+deploy-job:
+  stage: deploy
+  tags:
+    - justfit-admin
+  only: # 限定执行脚本的条件，only 支持 branch、tag、change、正则
+    - main
+  script: # 此 stage 要执行的脚本
+    - yarn
+    - yarn build
+    - rsync -avz --delete dist/ jiepei@118.31.18.106::justfit_admin
